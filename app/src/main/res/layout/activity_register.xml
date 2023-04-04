@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:theme="@style/text_title"
+        android:id="@+id/textViewSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/text_signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:theme="@style/edt_view"
+        android:background="@drawable/edittext_shape"
+        android:id="@+id/editTextName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginLeft="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_basex2"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginRight="@dimen/margin_base"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:drawableLeft="@drawable/user_icon"
+        android:hint="@string/hint_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSignup" />
+
+    <EditText
+        android:background="@drawable/edittext_shape"
+        android:id="@+id/editPhoneNumbers"
+        android:theme="@style/edt_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginLeft="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginRight="@dimen/margin_base"
+        android:drawableLeft="@drawable/phonenumbers_icon"
+        android:ems="10"
+        android:hint="@string/hint_phonenumbers"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+
+    <EditText
+        android:theme="@style/edt_view"
+        android:background="@drawable/edittext_shape"
+        android:id="@+id/editTextRegisterUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginLeft="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginRight="@dimen/margin_base"
+        android:drawableLeft="@drawable/user_icon"
+        android:ems="10"
+        android:hint="@string/hint_username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPhoneNumbers" />
+
+    <EditText
+        android:background="@drawable/edittext_shape"
+        android:id="@+id/editTextRegisterPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/edt_view"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginLeft="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginRight="@dimen/margin_base"
+        android:drawableLeft="@drawable/pass_icon"
+        android:ems="10"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterUsername" />
+
+    <EditText
+        android:background="@drawable/edittext_shape"
+        android:id="@+id/editTextConfirmPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/edt_view"
+        android:layout_marginStart="@dimen/margin_base"
+        android:layout_marginLeft="@dimen/margin_base"
+        android:layout_marginTop="@dimen/margin_base"
+        android:layout_marginEnd="@dimen/margin_base"
+        android:layout_marginRight="@dimen/margin_base"
+        android:drawableLeft="@drawable/loop_icon"
+        android:ems="10"
+        android:hint="@string/hint_confirmpass"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextRegisterPass" />
+
+    <Button
+        android:textSize="@dimen/text_content_size"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/maincolor1"
+        android:background="@drawable/buttonshape"
+        android:id="@+id/buttonRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/button_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPass" />
+
+    <TextView
+        android:textSize="@dimen/text_note_size"
+        android:textColor="#000000"
+        android:id="@+id/textViewGotoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/text_gotologin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

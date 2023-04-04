@@ -1,0 +1,22 @@
+<resources>
+    <!--    Login-->
+    <string name="app_name">Final Project</string>
+    <string name="text_login">Login</string>
+
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Pass word</string>
+    <string name="button_login">Login</string>
+    <string name="text_account_yet">Not have account yet? Sign up</string>
+
+    <!--    Register-->
+    <string name="text_signup">Sign up</string>
+    <string name="hint_name">Full name</string>
+    <string name="hint_phonenumbers">Phone numbers</string>
+    <string name="hint_confirmpass">input password again</string>
+    <string name="button_register">Register</string>
+    <string name="text_gotologin">Already have an account. Login now</string>
+
+    <string name="text_search_icon">Search</string>
+    <string name="text_ticket_icon">My ticket</string>
+    <string name="text_account_icon">My account</string>
+</resources>
