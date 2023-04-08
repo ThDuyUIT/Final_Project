@@ -16,5 +16,12 @@
     <style name="edt_view">
         <item name="android:textSize">@dimen/text_content_size</item>
         <item name="android:drawablePadding">5dp</item>
+
     </style>
+
+    <style name="txt_slogan">
+        <item name="android:textSize">@dimen/text_content_size</item>
+        <item name="android:textColor">@color/maincolor2</item>
+    </style>
+
 </resources>

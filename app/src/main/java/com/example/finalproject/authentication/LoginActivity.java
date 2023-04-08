@@ -1,4 +1,4 @@
-package com.example.finalproject;
+package com.example.finalproject.authentication;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -8,11 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.finalproject.R;
 
 public class LoginActivity extends AppCompatActivity {
 

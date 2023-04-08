@@ -7,7 +7,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    tools:context=".authentication.RegisterActivity"
     android:background="@drawable/background">
 
     <TextView
@@ -53,7 +53,7 @@
         android:layout_marginTop="@dimen/margin_base"
         android:layout_marginEnd="@dimen/margin_base"
         android:layout_marginRight="@dimen/margin_base"
-        android:drawableLeft="@drawable/phonenumbers_icon"
+        android:drawableLeft="@drawable/phone_icon"
         android:ems="10"
         android:hint="@string/hint_phonenumbers"
         android:inputType="textPersonName"

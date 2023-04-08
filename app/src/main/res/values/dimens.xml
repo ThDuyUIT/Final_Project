@@ -6,4 +6,8 @@
     <dimen name="text_title_size">40sp</dimen>
     <dimen name="text_note_size">17sp</dimen>
     <dimen name="drawble_pading">5dp</dimen>
+    <dimen name="basic_radius">8dp</dimen>
+    <dimen name="width_cardview">150dp</dimen>
+    <dimen name="heigh_imgCardview">170dp</dimen>
+    <dimen name="distance_text_img">10dp</dimen>
 </resources>
