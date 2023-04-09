@@ -62,8 +62,8 @@
 
     <Button
         android:textSize="@dimen/text_content_size"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/buttonshape"
+        android:textColor="@color/maincolor2"
+        android:background="@drawable/button_shape"
         android:backgroundTint="@color/maincolor1"
         android:id="@+id/buttonLogin"
         android:layout_width="0dp"

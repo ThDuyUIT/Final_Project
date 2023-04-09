@@ -1,10 +1,18 @@
 package com.example.finalproject.search;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -13,26 +21,87 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalproject.MainActivity;
 import com.example.finalproject.R;
+import com.example.finalproject.authentication.LoginActivity;
+import com.example.finalproject.authentication.RegisterActivity;
+import com.example.finalproject.search.list_city_points.ChooseCityActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.finalproject.search.list_city_points.ChooseCityActivity.*;
 
 public class SearchFragment extends Fragment{
 
     private RecyclerView recyclerView;
     private CategoryAdapter categoryAdapter;
+    private TextView txtSignin, txtStartPoint, txtEndPoint;
+    private Button btnSearch;
+
+    private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new
+            ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if(result.getResultCode() == RESULT_OK){
+                Intent intent = result.getData();
+                Bundle bundle = intent.getBundleExtra("selectedValue");
+                String strNamePoint = bundle.getString("namepoint");
+                String strNameOption = bundle.getString("nameoption");
+                if(strNamePoint.equals("Start point")){
+                    txtStartPoint.setText(strNameOption);
+                }else {
+                    txtEndPoint.setText(strNameOption);
+                }
+            }
+        }
+    });
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.search_fragment, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycleviewContain);
-        categoryAdapter = new CategoryAdapter(getContext());
+
+        mapping(view);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         categoryAdapter.setCategoryList(getListCategory());
         recyclerView.setAdapter(categoryAdapter);
+
+        txtSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        txtStartPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChooseCityActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("text", "Start point");
+                bundle.putInt("drawableLeft", R.drawable.point_start);
+
+                intent.putExtra("valueTitle", bundle);
+                activityResultLauncher.launch(intent);
+                //startActivity(intent);
+            }
+        });
+
+        txtEndPoint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChooseCityActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("text", "Where to?");
+                bundle.putInt("drawableLeft", R.drawable.point_end);
+
+                intent.putExtra("valueTitle", bundle);
+                activityResultLauncher.launch(intent);
+                //startActivity(intent);
+            }
+        });
 
         return view;
     }
@@ -54,6 +123,15 @@ public class SearchFragment extends Fragment{
         list.add(new Category("Popular bus routes", chuyenXeList));
         list.add(new Category("Promotions", chuyenXeList));
         return list;
+    }
+
+    private void mapping(View view){
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycleviewContain);
+        categoryAdapter = new CategoryAdapter(getContext());
+        txtSignin = (TextView) view.findViewById(R.id.textviewSignin);
+        txtStartPoint = (TextView) view.findViewById(R.id.textViewStartPoint);
+        txtEndPoint = (TextView) view.findViewById(R.id.textViewEndPoint);
+        btnSearch = (Button) view.findViewById(R.id.buttonSearchTickets);
     }
 
 }

@@ -28,6 +28,7 @@
             android:layout_alignParentLeft="true"/>
 
         <TextView
+            android:id="@+id/textviewSignin"
             android:gravity="center_vertical"
             android:textSize="@dimen/text_content_size"
             android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignTop="@+id/mainLogo"
             android:layout_alignBottom="@+id/mainLogo"
-            android:textColor="@color/maincolor2"
+            android:textColor="@drawable/change_textcolor"
             />
 
         <TextView
@@ -111,11 +112,12 @@
                 android:hint="@string/hint_date"
                 android:drawableLeft="@drawable/date"/>
         </LinearLayout>
+
         <Button
+            android:textColor="@color/maincolor2"
             android:id="@+id/buttonSearchTickets"
-            android:backgroundTint="@color/maincolor1"
             android:layout_marginTop="@dimen/margin_base"
-            android:background="@drawable/buttonshape"
+            android:background="@drawable/button_shape"
             android:textSize="@dimen/text_content_size"
             android:text="@string/text_search_tickets"
             android:layout_width="match_parent"
