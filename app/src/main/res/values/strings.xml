@@ -29,4 +29,6 @@
 
     <string name="text_search_tickets">Search tickets</string>
 
+    <string name="tex_confirm">Confirm</string>
+
 </resources>

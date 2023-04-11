@@ -23,10 +23,14 @@ import com.example.finalproject.MainActivity;
 import com.example.finalproject.R;
 import com.example.finalproject.authentication.LoginActivity;
 import com.example.finalproject.authentication.RegisterActivity;
+import com.example.finalproject.search.calendar.ChooseDateActivity;
 import com.example.finalproject.search.list_city_points.ChooseCityActivity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import static com.example.finalproject.search.list_city_points.ChooseCityActivity.*;
 
@@ -34,7 +38,7 @@ public class SearchFragment extends Fragment{
 
     private RecyclerView recyclerView;
     private CategoryAdapter categoryAdapter;
-    private TextView txtSignin, txtStartPoint, txtEndPoint;
+    private TextView txtSignin, txtStartPoint, txtEndPoint, txtDate;
     private Button btnSearch;
 
     private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new
@@ -44,16 +48,44 @@ public class SearchFragment extends Fragment{
             if(result.getResultCode() == RESULT_OK){
                 Intent intent = result.getData();
                 Bundle bundle = intent.getBundleExtra("selectedValue");
-                String strNamePoint = bundle.getString("namepoint");
-                String strNameOption = bundle.getString("nameoption");
-                if(strNamePoint.equals("Start point")){
-                    txtStartPoint.setText(strNameOption);
-                }else {
-                    txtEndPoint.setText(strNameOption);
+                if (bundle!= null) {
+                    String strNamePoint = bundle.getString("namepoint");
+                    String strNameOption = bundle.getString("nameoption");
+                    if (strNamePoint.equals("Start point")) {
+                        txtStartPoint.setText(strNameOption);
+                    } else {
+                        txtEndPoint.setText(strNameOption);
+                    }
+                }
+
+                long selectedDate = intent.getLongExtra("selectedDate", 0);
+                if (selectedDate != 0) {
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTimeInMillis(selectedDate);
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+                    txtDate.setText(dateFormat.format(calendar.getTime()));
                 }
             }
         }
     });
+
+//    private ActivityResultLauncher<Intent> activityCalendarResultLauncher = registerForActivityResult(new
+//            ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+//        @Override
+//        public void onActivityResult(ActivityResult result) {
+//            if(result.getResultCode() == RESULT_OK){
+//                Intent intent = result.getData();
+//                Bundle bundle = intent.getBundleExtra("selectedValue");
+//                String strNamePoint = bundle.getString("namepoint");
+//                String strNameOption = bundle.getString("nameoption");
+//                if(strNamePoint.equals("Start point")){
+//                    txtStartPoint.setText(strNameOption);
+//                }else {
+//                    txtEndPoint.setText(strNameOption);
+//                }
+//            }
+//        }
+//    });
 
     @Nullable
     @Override
@@ -103,6 +135,14 @@ public class SearchFragment extends Fragment{
             }
         });
 
+        txtDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ChooseDateActivity.class);
+                activityResultLauncher.launch(intent);
+                //startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -131,6 +171,7 @@ public class SearchFragment extends Fragment{
         txtSignin = (TextView) view.findViewById(R.id.textviewSignin);
         txtStartPoint = (TextView) view.findViewById(R.id.textViewStartPoint);
         txtEndPoint = (TextView) view.findViewById(R.id.textViewEndPoint);
+        txtDate = (TextView) view.findViewById(R.id.textViewDate);
         btnSearch = (Button) view.findViewById(R.id.buttonSearchTickets);
     }
 
