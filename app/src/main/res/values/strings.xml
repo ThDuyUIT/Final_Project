@@ -28,6 +28,6 @@
     <string name="hint_date">Departure date</string>
 
     <string name="text_search_tickets">Search tickets</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
 
 </resources>
