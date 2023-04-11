@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".search.list_city_points.ChooseCityActivity">
+
+    <TextView
+        android:id="@+id/textviewTitlePoint"
+        android:background="@color/maincolor2"
+        android:theme="@style/edt_view"
+        android:hint="@string/hint_start_point"
+        android:drawableLeft="@drawable/point_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_base"/>
+
+    <ListView
+        android:background="@color/maincolor2"
+        android:layout_marginTop="@dimen/margin_base0.5"
+        android:paddingLeft="@dimen/margin_base"
+        android:paddingRight="@dimen/margin_base"
+        android:id="@+id/listviewCity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</LinearLayout>
