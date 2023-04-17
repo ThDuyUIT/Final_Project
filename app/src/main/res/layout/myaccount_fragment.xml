@@ -1,7 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:orientation="vertical"
+    android:background="@drawable/background">
 
-</LinearLayout>
+  <include layout="@layout/toolbar_myaccount"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="220dp"
+      android:gravity="center"
+      android:orientation="vertical"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="61dp">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/account_icon" />
+
+    <TextView
+        android:id="@+id/tv_nameAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Hello Android"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:background="F40202" />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="281dp">
+
+    <ImageView
+        android:layout_marginLeft="16dp"
+        android:id="@+id/iv_PersonIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/person_icon" />
+
+    <TextView
+        android:id="@+id/tv_NameUser"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:text="FullName "
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_NamePersonAcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Trấn Thành Riêng Tư"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="342dp"
+      android:layout_marginTop="10dp">
+
+    <ImageView
+        android:id="@+id/iv_MailIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/mail_icon" />
+
+    <TextView
+        android:id="@+id/tv_Email"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:text="Email "
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_NamePersonAcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="thanhcry@gmail.com"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:id="@+id/linearLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="0dp"
+      tools:layout_editor_absoluteY="410dp">
+
+    <ImageView
+        android:id="@+id/iv_PhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:src="@drawable/phone_icon" />
+
+    <TextView
+        android:id="@+id/tv_Phone"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:text="Phone"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_PhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="09050508"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/btn_EditUser"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="22dp"
+      android:background="@drawable/normalbutton_shape"
+      android:text="Edit"
+      android:textSize="16sp"
+      app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+      tools:ignore="MissingConstraints"
+      tools:layout_editor_absoluteX="166dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

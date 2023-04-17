@@ -11,4 +11,5 @@
     <dimen name="width_cardview">150dp</dimen>
     <dimen name="heigh_imgCardview">170dp</dimen>
     <dimen name="distance_text_img">10dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

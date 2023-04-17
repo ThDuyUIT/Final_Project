@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     private void mapping(){
@@ -64,5 +66,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
     }
 
+    //MyAcount
 
 }
