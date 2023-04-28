@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="6dp"
-        android:background="F40202" />
+        android:background="#F40202"/>
   </LinearLayout>
 
   <LinearLayout

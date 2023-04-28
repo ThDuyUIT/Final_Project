@@ -31,4 +31,10 @@
 
     <string name="tex_confirm">Confirm</string>
 
+    <string name="route_name">Hà Nội - Hồ Chí Minh</string>
+    <string name="date_route">T2, 16/04/2023</string>
+    <string name="date_ticket">19:00    T2, 16/04/2023</string>
+
+    <string name="text_title_fill">Thông tin khách hàng</string>
+
 </resources>

@@ -24,4 +24,7 @@
         <item name="android:textColor">@color/maincolor2</item>
     </style>
 
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/maincolor1</item>
+    </style>
 </resources>
