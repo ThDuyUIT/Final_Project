@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/linearTicket"
+    android:padding="@dimen/margin_base0.5"
+    android:layout_marginBottom="@dimen/margin_base0.5"
+    android:background="@color/maincolor2">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageTicket"
+        android:layout_width="@dimen/width_img_ticket"
+        android:layout_height="@dimen/height_img_ticket"
+        app:riv_corner_radius="@dimen/basic_radius"
+        android:src="@drawable/limousine21v1"
+        />
+    
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margin_base0.5"
+        android:layout_marginTop="@dimen/margin_base0.5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameTicket"
+            style="@style/edt_view"
+            android:text="Giường nằm 40 chỗ có toilet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/departureTime"
+            android:text="9:00 - 11:30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            style="@style/edt_view"
+            android:id="@+id/priceTicket"
+            android:text="250.000VND"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>
