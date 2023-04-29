@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TableLayout tableLayout;
     private BottomNavigationView bottomNavigationView;
-    private ViewPager2 viewPager;
+    public ViewPager2 viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mapping();
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

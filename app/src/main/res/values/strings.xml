@@ -29,6 +29,8 @@
 
     <string name="text_search_tickets">Search tickets</string>
 
-    <string name="tex_confirm">Confirm</string>
+    <string name="text_confirm">Confirm</string>
 
+    <string name="text_login_required1"><b>Login required</b></string>
+    <string name="text_login_required2">Log in to see your booking history</string>
 </resources>

@@ -52,14 +52,14 @@ public class ChooseCityActivity extends AppCompatActivity {
     }
 
     private void mapping(){
-        getListCities();
+        setListCities();
 
         txtTitle = (TextView) findViewById(R.id.textviewTitlePoint);
         listView = (ListView) findViewById(R.id.listviewCity);
         cityAdapter = new CityAdapter(ChooseCityActivity.this, R.layout.line_name_city, cityList);
     }
 
-    private void getListCities(){
+    private void setListCities(){
         cityList = new ArrayList<>();
         cityList.add(new City("Tp Ho Chi Minh"));
         cityList.add(new City("Vinh Long"));

@@ -16,7 +16,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recycleviewCategory"
+        android:id="@+id/recycleviewCategory1"
         android:layout_marginTop="@dimen/margin_base"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycleviewCategory2"/>
 </LinearLayout>
